@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Caminhos</title>
+</head>
+<body>
+    <h1>Lista de Caminhos</h1>
+    {% if caminhos %}
+        <ul>
+            {% for caminho in caminhos %}
+                <li><a href="/pegar_caminho/{{ caminho.doc_id }}">{{ caminho['nome'] }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{{ mensagem }}</p>
+    {% endif %}
+    <p>Para ser direcinado a outros caminhos da aplicação, adicione '/nome_do_caminho' ao final do URL.</p>
+    <p>Aqui estão as opções:</p>
+    <p>/novo</p>
+    <p>/pegar_caminho</p>
+</body>
+</html>
